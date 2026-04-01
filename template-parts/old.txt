@@ -1,0 +1,19 @@
+<?php
+              $companies_grid = new WP_Query([
+                'post_type' => 'companies-grid',
+                'posts_per_page' => -1,
+                'order' => 'ASC'
+              ]);
+
+              $all_companies = $companies_query->posts;
+              $has_companies = $companies_query->have_posts();
+
+              if ($companies_grid->have_posts()) :
+                while ($companies_grid->have_posts()) : $companies_grid->the_post();
+
+                  $companies_grid_rate = get_field('companies-grid_rate');
+                  $companies_grid_review = get_field('companies-grid_review');
+                  $companies_grid_title = get_field('companies-grid_title');
+                  $companies_grid_img = get_field('companies-grid_img');
+
+              ?>

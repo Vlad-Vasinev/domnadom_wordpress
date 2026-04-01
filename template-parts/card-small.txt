@@ -1,0 +1,22 @@
+<?php
+$companies_grid_rate = get_field('companies-grid_rate');
+$companies_grid_review = get_field('companies-grid_review');
+$companies_grid_title = get_field('companies-grid_title');
+$companies_grid_img = get_field('companies-grid_img');
+?>
+<a class="card-small" href="#" data-aos="fade-up" data-aos-delay="50">
+    <div class="card-small__content">
+        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="">
+    </div>
+    <div class="card-small__info">
+        <div class="star">
+            <svg>...</svg>
+            <div class="text-s"><?php echo esc_html($companies_grid_rate ?: '4.5'); ?></div>
+        </div>
+        <div class="review">
+            <img src="<?php echo esc_url($companies_grid_img); ?>" alt="">
+            <p class="text-s"><?php echo esc_html($companies_grid_review ?: '1200'); ?></p>
+            <span class="text-s"><?php echo esc_html($companies_grid_title ?: 'reviews'); ?></span>
+        </div>
+    </div>
+</a>
